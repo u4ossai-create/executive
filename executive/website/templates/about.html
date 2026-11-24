@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Executive Child International School</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Running Display Ad -->
+    <div class="ad-ticker">
+        <div class="ticker-content">
+            <span>Welcome to Executive Child where greatness begins..</span>
+            <span>Welcome to Executive Child where greatness begins..</span>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="{% static 'images/logo.png' %}" alt="Executive Child Logo" class="school-logo">
+            <div class="school-name">
+                <h2>EXECUTIVE CHILD</h2>
+                <span>International School</span>
+            </div>
+        </div>
+        
+        <ul class="nav-links">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'academics' %}">Academics</a></li>
+            <li><a href="{% url 'admissions' %}">Admissions</a></li>
+            <li><a href="{% url 'result_login' %}" class="highlight-link">Result</a></li>
+            <li><a href="{% url 'portal' %}">Portal</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+
+        <div class="menu-toggle" id="mobile-menu" aria-label="Toggle navigation menu">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- About Us Content Section -->
+    <section class="welcome-section">
+        <div class="welcome-container">
+            <h2>About Us</h2>
+            
+            <p class="intro-text">
+                  At Executives International School, we are dedicated to nurturing future leaders through quality education, innovation, and holistic development. Our mission is to provide a world-class learning environment that blends academic excellence with strong moral values, preparing students to thrive in an ever-changing global society.
+            </p>
+            
+            <p>
+                  We believe education should inspire curiosity and build confidence. That is why we offer a balanced academic experience through both the <strong>Nigeria Education Service (NES)</strong> and <strong>Cambridge International Curricula</strong>, ensuring our students are prepared for success on both national and global stages.
+            </p>
+                        <p>
+                  We believe education should inspire curiosity and build confidence. That is why we offer a balanced academic experience through both the <strong>Nigeria Education Service (NES)</strong> and <strong>Cambridge International Curricula</strong>, ensuring our students are prepared for success on both national and global stages.
+            </p>
+
+            <!-- Image Gallery -->
+            <h3 style="margin-top: 40px; text-align: center;">Life at Executive Child International School</h3>
+            
+            <div class="image-gallery">
+                {% for image in gallery_images %}
+                    <div class="gallery-item">
+                        <!-- This pulls the image from your static folder dynamically -->
+                        <img src="{% static 'images/' %}{{ image }}" alt="School Gallery Image">
+                    </div>
+                {% empty %}
+                    <p style="text-align: center; width: 100%;">No gallery images added yet.</p>
+                {% endfor %}
+            </div>
+
+        </div>
+    </section>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Executive Child International School. All Rights Reserved.</p>
+            <p class="motto">Where Greatness Begins</p>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

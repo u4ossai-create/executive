@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admissions | Executive Child</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="{% static 'images/logo.png' %}" class="school-logo">
+            <div class="school-name"><h2>EXECUTIVE CHILD</h2></div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'academics' %}">Academics</a></li>
+            <li><a href="{% url 'admissions' %}">Admissions</a></li>
+            <li><a href="{% url 'result_login' %}" class="highlight-link">Result</a></li>
+            <li><a href="{% url 'portal' %}">Portal</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="welcome-section">
+        <div class="welcome-container">
+            <h2>Join Our Community</h2>
+            <p>Admissions are currently open for the 2026/2027 academic year. Follow the steps below to enroll your child.</p>
+            
+            <h3>Admission Process:</h3>
+            <ul class="commitment-list">
+                <li><strong>Step 1:</strong> Purchase and fill out the application form online or at the school admin office.</li>
+                <li><strong>Step 2:</strong> Submit required documents (Birth Certificate, previous school reports).</li>
+                <li><strong>Step 3:</strong> Schedule an entrance assessment and interview.</li>
+                <li><strong>Step 4:</strong> Receive your admission letter and pay the required fees.</li>
+            </ul>
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="#" class="cta-button primary" style="background: var(--primary-color); color: white;">Apply Now</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Executive Child International School. All Rights Reserved.</p>
+            <p class="motto">Where Greatness Begins</p>
+        </div>
+    </footer>

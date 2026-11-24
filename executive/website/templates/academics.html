@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Academics | Executive Child</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="{% static 'images/logo.png' %}" class="school-logo">
+            <div class="school-name"><h2>EXECUTIVE CHILD</h2></div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'academics' %}">Academics</a></li>
+            <li><a href="{% url 'admissions' %}">Admissions</a></li>
+            <li><a href="{% url 'result_login' %}" class="highlight-link">Result</a></li>
+            <li><a href="{% url 'portal' %}">Portal</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="welcome-section">
+        <div class="welcome-container">
+            <h2>Our Academic Programs</h2>
+            <p class="intro-text">We offer a balanced curriculum combining the Nigeria Education Service (NES) and Cambridge International standards.</p>
+            
+            <h3>Subjects Offered:</h3>
+            <ul class="commitment-list">
+                <li><strong>Mathematics & Sciences:</strong> Core Math, Integrated Science, Physics, Chemistry, Biology.</li>
+                <li><strong>Languages:</strong> English Language, French, N Languages.</li>
+                <li><strong>Humanities:</strong> Social Studies, Geography, History, Religious Studies.</li>
+                <li><strong>Creative Arts & Tech:</strong> ICT, Music, Visual Arts, Physical Education.</li>
+            </ul>
+        </div>
+    </section>
+</body>
+</html>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Executive Child International School. All Rights Reserved.</p>
+            <p class="motto">Where Greatness Begins</p>
+        </div>
+    </footer>

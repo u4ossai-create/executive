@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us | Executive Child</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="{% static 'images/logo.png' %}" class="school-logo">
+            <div class="school-name"><h2>EXECUTIVE CHILD</h2></div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'academics' %}">Academics</a></li>
+            <li><a href="{% url 'admissions' %}">Admissions</a></li>
+            <li><a href="{% url 'result_login' %}" class="highlight-link">Result</a></li>
+            <li><a href="{% url 'portal' %}">Portal</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="welcome-section">
+        <div class="welcome-container">
+            <h2>Get in Touch</h2>
+            <p class="intro-text"></p>We are here to answer any questions you may have about our school.</p>
+            
+            <div style="background: #f9f9f9; padding: 20px; border-radius: 10px; border-left: 5px solid var(--primary-color);">
+                <p><strong>Address:</strong> Road 13 Portharcourt,Portharcourt, Nigeria</p>
+                <p><strong>Phone:</strong> +234 8055409924</p>
+                <p><strong>Email:</strong> info@executivechild.edu.ng</p>
+                <p><strong>Office Hours:</strong> Monday - Friday, 8:00 AM - 4:00 PM</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Executive Child International School. All Rights Reserved.</p>
+            <p class="motto">Where Greatness Begins</p>
+        </div>
+    </footer>

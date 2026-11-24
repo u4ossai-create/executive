@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Result Login | Executive Child</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="{% static 'images/logo.png' %}" class="school-logo">
+            <div class="school-name"><h2>EXECUTIVE CHILD</h2></div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'academics' %}">Academics</a></li>
+            <li><a href="{% url 'admissions' %}">Admissions</a></li>
+            <li><a href="{% url 'result_login' %}" class="highlight-link">Result</a></li>
+            <li><a href="{% url 'portal' %}">Portal</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="welcome-section">
+        <div class="welcome-container" style="max-width: 400px;">
+            <h2 style="text-align: center;">Check Your Result</h2>
+            <p style="text-align: center; margin-bottom: 20px;">Please log in with your student credentials.</p>
+            
+            {% if messages %}
+                {% for message in messages %}
+                    <div style="background: #ffcccc; color: red; padding: 10px; border-radius: 5px; margin-bottom: 15px; text-align: center;">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+
+            <form method="POST" style="display: flex; flex-direction: column; gap: 15px;">
+                {% csrf_token %}
+                <input type="text" name="username" placeholder="Student ID / Username" required style="padding: 12px; border: 1px solid #ccc; border-radius: 5px;">
+                <input type="password" name="password" placeholder="Password" required style="padding: 12px; border: 1px solid #ccc; border-radius: 5px;">
+                <button type="submit" class="cta-button primary" style="background: var(--primary-color); color: white; border: none; cursor: pointer; padding: 12px;">Login to View Result</button>
+            </form>
+        </div>
+    </section>
+</body>
+</html>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Executive Child International School. All Rights Reserved.</p>
+            <p class="motto">Where Greatness Begins</p>
+        </div>
+    </footer>

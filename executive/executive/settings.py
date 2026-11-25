@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.1/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -20,12 +21,21 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-ssf=p9^&id6a8q2-c_+5$@pa+!(azizy-mo^^arc6qct4-5476'
+SECRET_KEY = os.environ.get(
+    'DJANGO_SECRET_KEY',
+    'django-insecure-ssf=p9^&id6a8q2-c_+5$@pa+!(azizy-mo^^arc6qct4-5476',
+)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('VERCEL_ENV') is None
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vercel.app', 'localhost', '127.0.0.1']
+if os.environ.get('VERCEL_PROJECT_PRODUCTION_URL'):
+    ALLOWED_HOSTS.append(os.environ['VERCEL_PROJECT_PRODUCTION_URL'])
+
+CSRF_TRUSTED_ORIGINS = ['https://*.vercel.app']
+if os.environ.get('VERCEL_PROJECT_PRODUCTION_URL'):
+    CSRF_TRUSTED_ORIGINS.append(f"https://{os.environ['VERCEL_PROJECT_PRODUCTION_URL']}")
 
 
 # Application definition
@@ -116,6 +126,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 
 # Email
